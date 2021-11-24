@@ -28,17 +28,9 @@ async function insertAssignmentInBackend(url,formData){
 
     const plainFormData = Object.fromEntries(formData.entries());
 
-    let assignmentJSON = {
-        address: plainFormData.address,
-        assignmentStartTime: plainFormData.assignmentStartTime,
-        assignmentEndTime: plainFormData.assignmentEndTime,
-        assignmentStartDate: plainFormData.assignmentStartDate,
-        assignmentEndDate: plainFormData.assignmentEndDate,
-        description: plainFormData.description,
-        color: plainFormData.color
-    }
+    console.log(plainFormData);
 
-    const JSONObjectToJSONString = JSON.stringify(assignmentJSON);
+    const JSONObjectToJSONString = JSON.stringify(plainFormData);
 
     console.log(JSONObjectToJSONString);
     console.log("url: "+url);
