@@ -7,7 +7,6 @@ function createFormEvent(){
 }
 
 async function handleAssignmentSubmit(event){
-    console.log("start handleMovieSubmit");
     event.preventDefault();
 
     const form = event.currentTarget;
