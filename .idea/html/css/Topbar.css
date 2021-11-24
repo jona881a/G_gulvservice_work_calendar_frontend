@@ -1,0 +1,116 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+
+}
+body {
+    margin: 0;
+    font-family: 'work sans', sans-serif;
+    font-weight: 400;
+    background-image: url("../img/img3.jfif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding:0 0 200px 0;
+
+}
+.header{
+    background: rgba(0, 0, 0, 0.82);
+    height: 100px;
+    margin: 0 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 3px 0 rgba(255, 255, 255, 0.2);
+
+}
+
+.nav ul {
+    display: flex;
+    margin:25px 50px;
+    list-style-type: none;
+    padding:0;
+    height:100%;
+
+
+
+}
+.nav ul li a {
+    text-decoration: none;
+    color: white;
+
+    font-size: 26px;
+    display: block;
+    width:175px;
+    text-align: center;
+    padding:10px 0;
+}
+.nav ul li a:hover{
+    transform:translateY(3%);
+    border-bottom:2px solid red;
+}
+
+#current{
+    border-bottom:2px solid red;
+    transform:translateY(3%);
+}
+
+
+.logo{
+    display: block;
+    height:80%;
+    margin-left:25px;
+    margin-top:10px;
+}
+.form-container{
+    color: #ffffff;
+    width:70%;
+    margin: 0 auto;
+    padding:75px 50px;
+    background: rgba(10, 10, 10, 0.96);
+    height:auto;
+    box-shadow: 0 1px rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.form-container div{
+    margin-bottom:15px;
+}
+.form-container div input, .form-container div select{
+    float: right;
+    margin-right: 2px;
+    width:200px;
+    padding:2px 2px;
+
+}
+
+#formMovie input{
+    width:350px;
+}
+.form-container div input:focus,.form-container div select:focus{
+    outline:none;
+}
+
+.form-container label{
+    font-size: 20px;
+}
+
+#footer{
+    float:right;
+}
+#footer input, #footer button{
+    width:150px;
+    height:35px;
+    font-size: 15px;
+    border-radius: 5px;
+}
+#footer input:hover, #footer button:hover{
+    cursor:pointer;
+    background-color: rgb(193, 193, 193);
+}
+
+#footer-btn{
+    cursor:pointer;
+    background: #6b0101;
+}
+
+

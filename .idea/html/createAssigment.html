@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Assignment</title>
+    <link rel="stylesheet" type="text/css" href="css/Topbar.css">
+</head>
+<body>
+
+<div class="header">
+    <img class="logo" src="img/FinallogoBig.png" alt="Logo"/>
+    <div class="container">
+        <nav class="nav">
+            <ul>
+                <li><a href="calender.html">Calender</a></li>
+                <li><a id = "current" href="assignment.html">Assignment</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<div class="form-container" id = "formAssignment">
+    <form id="assign" action="http://localhost:8080/assignment" method="post">
+
+        <div class="movieID">
+        </div>
+        <div>
+            <label>* Address
+                <input type="text" name="address" required>
+            </label>
+        </div>
+
+        <div>
+            <label>* Start time
+                <input type="time" name="assignmentStartTime" placeholder=" hh:mm:ss" required>
+            </label>
+        </div>
+
+        <div>
+            <label>* End time
+                <input type="time" name="assignmentEndTime" placeholder=" hh:mm:ss" required>
+            </label>
+        </div>
+
+        <div>
+            <label>* Start date
+                <input type="date" name="assignmentStartDate" placeholder="dd-mm-yyyy hh:mm:ss" required>
+            </label>
+        </div>
+
+        <div>
+            <label>* End date
+                <input type="date" name="assignmentEndDate" placeholder="dd-mm-yyyy hh:mm:ss" required>
+            </label>
+        </div>
+
+        <div>
+            <label>* Color
+                <input type="text" name="color" required>
+            </label>
+        </div>
+
+        <div>
+            <label>* Description
+                <input type = "number" name="description" required>
+            </label>
+        </div>
+
+        <div id = "footer">
+            <button  type="submit" title="save assignment" id = "submit">Create</button>
+        </div>
+
+    </form>
+</div>
+
+
+
+
+<script src ="js/createAssignment.js"></script>
+
+
+</body>
+</html>
