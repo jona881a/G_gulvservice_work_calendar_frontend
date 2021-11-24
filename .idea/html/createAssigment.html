@@ -31,26 +31,14 @@
         </div>
 
         <div>
-            <label>* Start time
-                <input type="time" name="assignmentStartTime" placeholder=" hh:mm:ss" required>
+            <label>* Start time and Date
+                <input type="datetime-local" name="assignmentStartDateTime"required>
             </label>
         </div>
 
         <div>
-            <label>* End time
-                <input type="time" name="assignmentEndTime" placeholder=" hh:mm:ss" required>
-            </label>
-        </div>
-
-        <div>
-            <label>* Start date
-                <input type="date" name="assignmentStartDate" placeholder="dd-mm-yyyy hh:mm:ss" required>
-            </label>
-        </div>
-
-        <div>
-            <label>* End date
-                <input type="date" name="assignmentEndDate" placeholder="dd-mm-yyyy hh:mm:ss" required>
+            <label>* End time and Date
+                <input type="datetime-local" name="assignmentEndDateTime" required>
             </label>
         </div>
 
@@ -62,17 +50,16 @@
 
         <div>
             <label>* Description
-                <input type = "number" name="description" required>
+                <input type = "text" name="description" required>
             </label>
         </div>
 
         <div id = "footer">
-            <button  type="submit" title="save assignment" id = "submit">Create</button>
+            <button  type="submit" title="save assignment" id="submit">Create</button>
         </div>
 
     </form>
 </div>
-
 
 
 
