@@ -7,16 +7,14 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-
 <div id="container">
 <div id="header">
     <div id="currentMonthDisplay"></div>
     <div>
-        <button id="nextButton">Previous Month</button>
-        <button id="previousButton">Next Month</button>
+        <button id="previousButton">Previous Month</button>
+        <button id="nextButton">Next Month</button>
     </div>
 </div>
-
 <div id="weekdays">
     <div>Monday</div>
     <div>Thuesday</div>
@@ -26,11 +24,24 @@
     <div>Saturday</div>
     <div>Sunday</div>
 </div>
-
 <div id="calendar"></div>
 </div>
+<div id="newEventModal">
+    <h2>New Event</h2>
+    <input id="eventTitleInput" placeholder="Event Title" />
+    <button id="saveBtn">Save</button>
+    <button id="cancelBtn">Cancel</button>
+</div>
+<div id="deleteEventModal">
+    <h2>Event</h2>
+    <p id="eventText"></p>
 
+    <button id="deleteBtn">Delete</button>
+    <button id="closeBtn">Close</button>
 
+</div>
+
+<div id="modalBackDrop"></div>
 
 <script src="TestScript.js"></script>
 </body>
