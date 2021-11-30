@@ -1,7 +1,7 @@
 let nav = 0;  //Bliver brugt som varibael til at navigerer frem og tilbage i måneder. Hvis januar er 0, så er -1 = december og 1 = februar
 let clicked = null; //Indikerer om statusen på en måned er trykket på eller ikke trykket på
 let events = localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : []; //Et array med strings, kan ikke indeholde arrays, derfor bruges JSON til at parse
-
+//
 
 const calendar = document.getElementById('calendar');
 const newEventModal = document.getElementById('newEventModal');
