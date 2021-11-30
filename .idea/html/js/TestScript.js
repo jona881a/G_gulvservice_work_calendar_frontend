@@ -55,12 +55,6 @@ function load(){
 
     calendar.innerHTML = '';
 
-    console.log('Days in current month = ' + amountOfDaysInMonth);
-    console.log('last day of previous month = ' + dateString);
-    console.log('Padding days of current month '+ `( ${dt.toLocaleDateString(undefined,{month: 'long'})} )  = `  + paddingDays);
-    console.log('')
-    console.log('')
-    console.log('')
 
     for(let i = 1; i <= paddingDays + amountOfDaysInMonth; i++){
         const daySquare = document.createElement('div');
@@ -93,7 +87,6 @@ function load(){
 
         calendar.appendChild(daySquare);
 
-        console.log(i - paddingDays + ' ' + day + ' ' + nav)
     }
 
 

@@ -2,7 +2,7 @@ body {
     display: flex;
     margin-top: 50px;
     justify-content: center;
-    background: linear-gradient(to right, #92f5d8, #fc84e7, lightpink);
+    background: linear-gradient(to right, #030505, #817f81, #fffcfc);
 }
 button {
     width: 75px;
@@ -17,7 +17,7 @@ button {
 
 #header {
     padding: 10px;
-    color: #5f3da5;
+    color: black;
     font-size: 70px;
     font-family: sans-serif;
     display: flex;
@@ -32,7 +32,7 @@ button {
 #weekdays {
     width: 100%;
     display: flex;
-    color: #247ba0;
+    color: #050202;
     font-size: 22px;
 }
 #weekdays div {
@@ -68,7 +68,7 @@ button {
 .event {
     font-size: 10px;
     padding: 3px;
-    background-color: #58bae4;
+    background-color: #000000;
     color: white;
     border-radius: 5px;
     max-height: 55px;
@@ -83,15 +83,40 @@ button {
     display: none;
     z-index: 20;
     padding: 25px;
-    background-color: #e8f4fa;
-    box-shadow: 0px 0px 3px black;
+    background-color: #070e11;
+    box-shadow: 0px 0px 3px #000000;
     border-radius: 5px;
-    width: 350px;
+    width: 550px;
+    height: 500px;
     top: 100px;
     left: calc(50% - 175px);
     position: absolute;
     font-family: sans-serif;
 }
+
+.form-container{
+    color: #ffffff;
+    width:70%;
+    margin: 0 auto;
+    padding:75px 50px;
+    background: rgba(10, 10, 10, 0.96);
+    height: 20px;
+    box-shadow: 0 1px rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.form-container div{
+    margin-bottom:15px;
+}
+.form-container div input, .form-container div select{
+    float: right;
+    margin-right: 2px;
+    width:200px;
+    padding:2px 2px;
+
+}
+
+
 #eventTitleInput {
     padding: 10px;
     width: 100%;
@@ -102,6 +127,10 @@ button {
     border: none;
     box-shadow: 0px 0px 3px gray;
 }
+#eventTitleHeader{
+    color: white;
+}
+
 #eventTitleInput.error {
     border: 2px solid red;
 }
@@ -111,8 +140,11 @@ button {
 #saveBtn, #closeBtn {
     background-color: #92a1d1;
 }
+
+
 #eventText {
     font-size: 14px;
+    color: white;
 }
 #modalBackDrop {
     display: none;
@@ -122,5 +154,5 @@ button {
     width: 100vw;
     height: 100vh;
     position: absolute;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(83, 83, 83, 0.8);
 }

@@ -26,14 +26,60 @@
 </div>
 <div id="calendar"></div>
 </div>
+
+
 <div id="newEventModal">
-    <h2>New Event</h2>
-    <input id="eventTitleInput" placeholder="Event Title" />
-    <button id="saveBtn">Save</button>
-    <button id="cancelBtn">Cancel</button>
+
+    <h2 id="eventTitleHeader">New Event</h2>
+
+    <div class="form-container" id="formAssignment">
+
+
+
+        <form id="assign" action="http://localhost:8080/assignment" method="post">
+
+            <input id="eventTitleInput" placeholder="Event Title" />
+
+            <div>
+                <label>* Address
+                    <input  type="text" name="address" required>
+                </label>
+            </div>
+
+            <div>
+                <label>* Start time and Date
+                    <input type="datetime-local" name="assignmentStartDateTime" required>
+                </label>
+            </div>
+
+            <div>
+                <label>* End time and Date
+                    <input type="datetime-local" name="assignmentEndDateTime" required>
+                </label>
+            </div>
+
+            <div>
+                <label>* Color
+                    <input type="text" name="color" required>
+                </label>
+            </div>
+
+            <div>
+                <label>* Description
+                    <input type = "text" name="description" required>
+                </label>
+            </div>
+
+            <div id = "footer">
+                <button id="saveBtn" type="submit" title="save assignment">Save</button>
+                <button id="cancelBtn" type="reset" title="cancel assignment">Cancel</button>
+            </div>
+        </form>
+    </div>
+
 </div>
 <div id="deleteEventModal">
-    <h2>Event</h2>
+    <h2 id="eventTitleHeader">Event</h2>
     <p id="eventText"></p>
 
     <button id="deleteBtn">Delete</button>
@@ -44,5 +90,6 @@
 <div id="modalBackDrop"></div>
 
 <script src="TestScript.js"></script>
+<script src="createAssignment.js"></script>
 </body>
 </html>
