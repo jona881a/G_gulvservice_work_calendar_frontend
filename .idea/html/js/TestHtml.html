@@ -33,16 +33,14 @@
     <h2 id="eventTitleHeader">New Event</h2>
 
     <div class="form-container" id="formAssignment">
-
-
-
+        
         <form id="assign" action="http://localhost:8080/assignment" method="post">
 
-            <input id="eventTitleInput" placeholder="Event Title" />
+            <input id="eventTitleInput" name="title" placeholder="Event Title" />
 
             <div>
                 <label>* Address
-                    <input  type="text" name="address" required>
+                    <input type="text" name="address" required>
                 </label>
             </div>
 
