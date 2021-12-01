@@ -17,6 +17,30 @@ const descriptionInput = document.getElementById('descriptionInput');
 
 const weekdays = ['Monday','Thuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
 
+async function loadAssignmentsFromDatabase() {
+    const urlAssignment = "http://localhost:8080/assignment";
+
+    const promise = fetch(urlAssignment).then(response => response.json());
+    promise.then(assigments =>{
+        assigments.forEach(assignment => {
+            events.push({
+                assignmentId: assignment.assignmentID,
+                title: assignment.title,
+                address: assignment.address,
+                color: assignment.color,
+                description: assignment.description,
+                startTime: assignment.assignmentStartDateTime,
+                endTime: assignment.assignmentEndDateTime
+            })
+        })
+    });
+    //Vi mangler at kunne tilføje dem så de dukker op på kaldeneren
+}
+
+loadAssignmentsFromDatabase();
+
+console.log(events);
+
 function openModal(date){
     clicked = date;
 
@@ -58,8 +82,6 @@ function load(){
     document.getElementById("currentMonthDisplay").innerText =
         `${dt.toLocaleDateString('en-us',{ month: 'long' })} ${year}`;
 
-
-
     calendar.innerHTML = '';
 
 
@@ -68,7 +90,6 @@ function load(){
         daySquare.classList.add('day');
 
         const dayString = `${month + 1}/${i - paddingDays}/${year}`;
-
 
 
         if(i > paddingDays){
@@ -118,7 +139,6 @@ function saveEvent(){
             description: descriptionInput.value,
             startTime: startTimeInput.value,
             endTime: endTimeInput.value,
-
         });
 
         localStorage.setItem('events', JSON.stringify(events));

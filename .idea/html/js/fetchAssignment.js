@@ -12,7 +12,6 @@ async function fetchAssignmentFromDB() {
     promise.then(data =>{ //Vi reagere på dataen der kommer fra vores RESTapi
         data.forEach(assignment => { //Vi hiver hver movie ud af promiseobjektet
             assignmentsMap.set(assignment.assignmentID, assignment);
-
         })
     })
 } //fetching room from database
@@ -26,7 +25,3 @@ function showAssignmentMap() {
 function getAssigment(assignmentid) {
     return assignmentsMap.get(assignmentid);
 }
-
-
-fetchAssignmentFromDB()
-showAssignmentMap()
