@@ -1,6 +1,7 @@
 
 document.addEventListener("DOMContentLoaded",createFormEvent);
 
+
 function createFormEvent(){
     const formObject = document.getElementById("assign");
     formObject.addEventListener("submit",handleAssignmentSubmit);
@@ -43,6 +44,10 @@ async function insertAssignmentInBackend(url,formData){
     }
 
     const response = await fetch(url,POSTOptions);
+
+    await resetInputFields();
+
     return response.json();
+
 }
 
