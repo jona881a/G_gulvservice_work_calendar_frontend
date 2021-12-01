@@ -82,14 +82,14 @@ button {
 #newEventModal, #deleteEventModal {
     display: none;
     z-index: 20;
-    padding: 25px;
+    padding: 20px;
     background-color: #070e11;
     box-shadow: 0px 0px 3px #000000;
     border-radius: 5px;
-    width: 550px;
-    height: 500px;
+    width: 40%;
+    height: 400px;
     top: 100px;
-    left: calc(50% - 175px);
+    left: calc(40% - 10%);
     position: absolute;
     font-family: sans-serif;
 }
@@ -97,12 +97,16 @@ button {
 .form-container{
     color: #ffffff;
     width:70%;
-    margin: 0 auto;
-    padding:75px 50px;
+    margin: 10px;
+    padding:100px 50px;
+    padding-top: 30px;
+    padding-left: 55px;
+    padding-right: 40px;
     background: rgba(10, 10, 10, 0.96);
-    height: 20px;
+    height: 170px;
     box-shadow: 0 1px rgba(255, 255, 255, 0.1);
     border-radius: 4px;
+
 }
 
 .form-container div{
@@ -113,10 +117,7 @@ button {
     margin-right: 2px;
     width:200px;
     padding:2px 2px;
-
 }
-
-
 #eventTitleInput {
     padding: 10px;
     width: 100%;
@@ -152,7 +153,10 @@ button {
     left: 0px;
     z-index: 10;
     width: 100vw;
-    height: 100vh;
+    height: 120vh;
     position: absolute;
     background-color: rgba(83, 83, 83, 0.8);
+}
+#assign{
+
 }

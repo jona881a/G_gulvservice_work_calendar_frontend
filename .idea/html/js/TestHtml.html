@@ -33,38 +33,38 @@
     <h2 id="eventTitleHeader">New Event</h2>
 
     <div class="form-container" id="formAssignment">
-        
+
         <form id="assign" action="http://localhost:8080/assignment" method="post">
 
-            <input id="eventTitleInput" name="title" placeholder="Event Title" />
+            <input name="title" id="eventTitleInput" placeholder="Event Title" />
 
             <div>
                 <label>* Address
-                    <input type="text" name="address" required>
+                    <input id="addressInput"  type="text" name="address" >
                 </label>
             </div>
 
             <div>
                 <label>* Start time and Date
-                    <input type="datetime-local" name="assignmentStartDateTime" required>
+                    <input id="startTimeInput" type="datetime-local" name="assignmentStartDateTime" >
                 </label>
             </div>
 
             <div>
                 <label>* End time and Date
-                    <input type="datetime-local" name="assignmentEndDateTime" required>
+                    <input id="endTimeInput" type="datetime-local" name="assignmentEndDateTime" >
                 </label>
             </div>
 
             <div>
                 <label>* Color
-                    <input type="text" name="color" required>
+                    <input id="colorInput" type="text" name="color" >
                 </label>
             </div>
 
             <div>
                 <label>* Description
-                    <input type = "text" name="description" required>
+                    <input id="descriptionInput" type = "text" name="description" >
                 </label>
             </div>
 

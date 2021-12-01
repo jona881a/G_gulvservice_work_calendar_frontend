@@ -7,7 +7,14 @@ const calendar = document.getElementById('calendar');
 const newEventModal = document.getElementById('newEventModal');
 const deleteEventModal = document.getElementById('deleteEventModal');
 const backDrop = document.getElementById('modalBackDrop');
+
 const eventTitleInput = document.getElementById('eventTitleInput');
+const addressInput = document.getElementById('addressInput');
+const startTimeInput = document.getElementById('startTimeInput');
+const endTimeInput = document.getElementById('endTimeInput');
+const colorInput = document.getElementById('colorInput');
+const descriptionInput = document.getElementById('descriptionInput');
+
 const weekdays = ['Monday','Thuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
 
 function openModal(date){
@@ -88,15 +95,12 @@ function load(){
         calendar.appendChild(daySquare);
 
     }
-
-
 }
 function closeModal(){
     eventTitleInput.classList.remove('error');
     newEventModal.style.display = 'none';
     deleteEventModal.style.display = 'none';
     backDrop.style.display = 'none';
-    eventTitleInput.value = '';
     clicked = null;
     load();
 
@@ -109,6 +113,12 @@ function saveEvent(){
         events.push({
             date: clicked,
             title: eventTitleInput.value,
+            address: addressInput.value,
+            color: colorInput.value,
+            description: descriptionInput.value,
+            startTime: startTimeInput.value,
+            endTime: endTimeInput.value,
+
         });
 
         localStorage.setItem('events', JSON.stringify(events));
@@ -116,12 +126,22 @@ function saveEvent(){
     }else{
         eventTitleInput.classList.add('error');
     }
+
 }
 
 function deleteEvent(){
     events = events.filter(e => e.date !== clicked);
     localStorage.setItem('events', JSON.stringify(events));
     closeModal();
+}
+
+function resetInputFields(){
+    eventTitleInput.value = '';
+    addressInput.value = '';
+    colorInput.value = '';
+    descriptionInput.value = '';
+    startTimeInput.value = null;
+    endTimeInput.value = null;
 }
 
 
