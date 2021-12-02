@@ -23,8 +23,17 @@ async function loadAssignmentsFromDatabase() {
     const promise = fetch(urlAssignment).then(response => response.json());
     promise.then(assigments =>{
         assigments.forEach(assignment => {
+            const dateOfAssignment = new Date(assignment.assignmentStartDateTime);
+
+            const day = dateOfAssignment.getDate();
+            const month = dateOfAssignment.getMonth()+1;
+            const year = dateOfAssignment.getFullYear();
+
+            const dateString = `${month}/${day}/${year}`;
+
             events.push({
                 assignmentId: assignment.assignmentID,
+                date: dateString,
                 title: assignment.title,
                 address: assignment.address,
                 color: assignment.color,
@@ -34,12 +43,8 @@ async function loadAssignmentsFromDatabase() {
             })
         })
     });
-    //Vi mangler at kunne tilføje dem så de dukker op på kaldeneren
+    localStorage.setItem('events', JSON.stringify(events));
 }
-
-loadAssignmentsFromDatabase();
-
-console.log(events);
 
 function openModal(date){
     clicked = date;
@@ -90,7 +95,6 @@ function load(){
         daySquare.classList.add('day');
 
         const dayString = `${month + 1}/${i - paddingDays}/${year}`;
-
 
         if(i > paddingDays){
             daySquare.innerText = i - paddingDays;
@@ -184,6 +188,6 @@ function clickButtons(){
 
     document.getElementById('closeBtn').addEventListener('click',closeModal);
 }
-
+loadAssignmentsFromDatabase();
 clickButtons();
 load();
