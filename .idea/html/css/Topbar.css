@@ -8,14 +8,14 @@ body {
     margin: 0;
     font-family: 'work sans', sans-serif;
     font-weight: 400;
-    background-image: url("../img/img3.jfif");
     background-repeat: no-repeat;
     background-size: cover;
     padding:0 0 200px 0;
+    background: linear-gradient(to left, #030505,#817f81 , #bebdbd, #817f81, #030505);
 
 }
 .header{
-    background: rgba(0, 0, 0, 0.82);
+    background: rgb(80,80,80);
     height: 100px;
     margin: 0 0 0 0;
     display: flex;
@@ -62,7 +62,6 @@ body {
     margin-top:10px;
 }
 .form-container{
-    color: #ffffff;
     width:70%;
     margin: 0 auto;
     padding:75px 50px;
@@ -92,6 +91,7 @@ body {
 
 .form-container label{
     font-size: 20px;
+    color: white;
 }
 
 #footer{

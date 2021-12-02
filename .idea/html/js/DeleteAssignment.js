@@ -1,5 +1,5 @@
 
-async function deleteSreening(screening) {
+async function deleteAssignmentFromDB(screening) {
     try {
         const response = await restDeleteScreening(screening);
         out("Vi har slettet");
@@ -12,7 +12,7 @@ async function deleteSreening(screening) {
 }
 
 async function restDeleteScreening(screening) {
-    const url = "http://localhost:8080/screening/" + screening.screeningID;
+    const url = "http://localhost:8080/deleteAssignment/" + assignment.assignmentID;
 
     const fetchOptions = {
         method: "DELETE",
@@ -30,4 +30,3 @@ async function restDeleteScreening(screening) {
 
     return response;
 }
-adw

@@ -1,8 +1,6 @@
 body {
-    display: flex;
-    margin-top: 50px;
     justify-content: center;
-    background: linear-gradient(to right, #030505, #817f81, #fffcfc);
+    background: linear-gradient(to left, #030505,#817f81 , #bebdbd, #817f81, #030505);
 }
 button {
     width: 75px;
@@ -28,6 +26,7 @@ button {
 }
 #container {
     width: 770px;
+    margin: auto;
 }
 #weekdays {
     width: 100%;

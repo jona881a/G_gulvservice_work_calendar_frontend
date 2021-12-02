@@ -156,6 +156,9 @@ function saveEvent(){
 function deleteEvent(){
     events = events.filter(e => e.date !== clicked);
     localStorage.setItem('events', JSON.stringify(events));
+
+    //deleteAssignmentFromDB(screening);
+
     closeModal();
 }
 
