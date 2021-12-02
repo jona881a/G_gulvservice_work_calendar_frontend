@@ -12,7 +12,7 @@ async function deleteAssignmentFromDB(screening) {
 }
 
 async function restDeleteScreening(screening) {
-    const url = "http://localhost:8080/deleteAssignment/" + assignment.assignmentID;
+    const url = "http://localhost:8080/assignment/" + assignment.assignmentID;
 
     const fetchOptions = {
         method: "DELETE",
