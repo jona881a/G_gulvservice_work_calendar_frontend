@@ -54,6 +54,11 @@ function openModal(date){
 
     if (eventForDay){
         document.getElementById('eventText').innerText = eventForDay.title;
+        document.getElementById('addressText').innerText = eventForDay.address;
+        document.getElementById('startDateText').innerText = eventForDay.startTime;
+        document.getElementById('endDateText').innerText = eventForDay.endTime;
+        document.getElementById('colorText').innerText = eventForDay.color + " - team";
+        document.getElementById('descriptionText').innerText = eventForDay.description
         deleteEventModal.style.display = 'block';
     }else{
         newEventModal.style.display = 'block';

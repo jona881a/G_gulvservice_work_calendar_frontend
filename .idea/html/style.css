@@ -93,6 +93,11 @@ button {
     font-family: sans-serif;
 }
 
+.pText{
+    color: white;
+    font-size: 20px;
+}
+
 .form-container{
     color: #ffffff;
     width:70%;
@@ -142,10 +147,6 @@ button {
 }
 
 
-#eventText {
-    font-size: 14px;
-    color: white;
-}
 #modalBackDrop {
     display: none;
     top: 0px;
