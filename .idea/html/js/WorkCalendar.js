@@ -20,8 +20,8 @@ const weekdays = ['Monday','Thuesday','Wednesday','Thursday','Friday','Saturday'
 async function loadAssignmentsFromDatabase() {
     const urlAssignment = "http://localhost:8080/assignment";
 
-    const promise = fetch(urlAssignment).then(response => response.json());
-    promise.then(assigments =>{
+    await fetch(urlAssignment).then(response => response.json())
+    .then(assigments =>{
         assigments.forEach(assignment => {
             const dateOfAssignment = new Date(assignment.assignmentStartDateTime);
 
@@ -41,9 +41,10 @@ async function loadAssignmentsFromDatabase() {
                 startTime: assignment.assignmentStartDateTime,
                 endTime: assignment.assignmentEndDateTime
             })
+            localStorage.setItem('events', JSON.stringify(events));
         })
     });
-    localStorage.setItem('events', JSON.stringify(events));
+    await load();
 }
 
 function openModal(date){
@@ -150,7 +151,6 @@ function saveEvent(){
     }else{
         eventTitleInput.classList.add('error');
     }
-
 }
 
 function deleteEvent(){
@@ -191,6 +191,9 @@ function clickButtons(){
 
     document.getElementById('closeBtn').addEventListener('click',closeModal);
 }
-loadAssignmentsFromDatabase();
-clickButtons();
-load();
+async function loadCalendar() {
+    await loadAssignmentsFromDatabase();
+    clickButtons();
+}
+loadCalendar();
+
