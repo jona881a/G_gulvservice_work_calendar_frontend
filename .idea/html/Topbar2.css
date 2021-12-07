@@ -5,13 +5,31 @@
 
 }
 .header2{
-    background: rgb(80, 80, 80);
+    background: rgb(198, 198, 198);
     height: 100px;
     margin: 0 0 0 0;
     display: flex;
     justify-content: space-between;
-    box-shadow: 3px 0 rgba(255, 255, 255, 0.2);
+    box-shadow: 3px 0 rgba(233, 246, 246, 0.82);
 
+
+
+}
+
+#table-wrap{
+    margin: auto;
+    width: 50%;
+}
+
+#assignmentTable{
+    margin: auto;
+   width: 300px;
+    color: white;
+}
+
+th{
+    padding: 10px;
+    font-size: 30px;
 }
 
 .nav ul {
@@ -36,11 +54,11 @@
 }
 .nav ul li a:hover{
     transform:translateY(3%);
-    border-bottom:2px solid red;
+    border-bottom:2px solid lightslategrey;
 }
 
 #current{
-    border-bottom:2px solid red;
+    border-bottom:2px solid lightslategrey;
     transform:translateY(3%);
 }
 
