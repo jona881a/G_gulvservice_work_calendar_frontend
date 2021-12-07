@@ -1,6 +1,7 @@
 body {
     justify-content: center;
-    background: linear-gradient(to left, #030505,#817f81 , #bebdbd, #817f81, #030505);
+    background: linear-gradient(to left, #748697, #b3b1b3, #748697);
+
 }
 button {
     width: 75px;
