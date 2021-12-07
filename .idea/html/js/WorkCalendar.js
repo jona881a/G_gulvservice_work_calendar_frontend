@@ -16,6 +16,7 @@ const colorInput = document.getElementById('colorInput');
 const descriptionInput = document.getElementById('descriptionInput');
 
 const weekdays = ['Monday','Thuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+const modalColors = ['Red', 'Green', 'Blue', 'Yellow', 'Orange', 'Purple', 'Pink', 'Cadetblue', 'Chocolate', 'Forestgreen']
 
 async function loadAssignmentsFromDatabase() {
     const urlAssignment = "http://localhost:8080/assignment";
@@ -60,13 +61,24 @@ function openModal(date){
         document.getElementById('colorText').innerText = eventForDay.color + " - team";
         document.getElementById('descriptionText').innerText = eventForDay.description
         deleteEventModal.style.display = 'block';
-    }else{
+    } else {
         newEventModal.style.display = 'block';
+        createDropDown();
     }
 
     backDrop.style.display = 'block';
 }
 
+function createDropDown() {
+    var select = document.getElementById("colorInput");
+
+    for(var i = 0; i < modalColors.length; i++) {
+        var option = modalColors[i];
+        var element = document.createElement("option");
+        element.textContent = option;
+        select.appendChild(element);
+    }
+}
 
 function load(){
     const dt = new Date();
@@ -114,11 +126,13 @@ function load(){
                 const eventDiv = document.createElement('div');
                 eventDiv.classList.add('event');
                 eventDiv.innerText = eventForDay.title;
+                eventDiv.style.backgroundColor = '' + eventForDay.color;
+
                 daySquare.appendChild(eventDiv);
             }
 
             daySquare.addEventListener('click', () => openModal(dayString));
-        }else {
+        } else {
             daySquare.classList.add('padding');
         }
 
@@ -134,7 +148,6 @@ function closeModal(){
     backDrop.style.display = 'none';
     clicked = null;
     load();
-
 }
 
 function saveEvent(){
