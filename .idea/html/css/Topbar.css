@@ -46,11 +46,11 @@ body {
 }
 .nav ul li a:hover{
     transform:translateY(3%);
-    border-bottom:2px solid red;
+    border-bottom:2px solid lightslategrey;
 }
 
 #current{
-    border-bottom:2px solid red;
+    border-bottom:2px solid lightslategrey;
     transform:translateY(3%);
 }
 
@@ -110,7 +110,7 @@ body {
 
 #footer-btn{
     cursor:pointer;
-    background: #6b0101;
+    background: grey;
 }
 
 
