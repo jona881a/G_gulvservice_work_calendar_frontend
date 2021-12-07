@@ -4,7 +4,9 @@ const table = document.getElementById("assignmentTable");
 
 function addRow(assignment){
 
-    let rowAmount = table.rows.length;
+    console.log("add row method")
+
+    let rowCount = table.rows.length;
     let row = table.insertRow(rowCount);
     row.id = assignment.assignment;
 
@@ -35,28 +37,11 @@ async function createTableFromMap() {
     await  fetchAssignmentFromDB();
     console.log(assignmentsMap);
     console.log("create table");
-
-    if(table.rows.length !== 1){
-        const elem = document.querySelectorAll("tr");
-
-        let count = 1;
-        elem.forEach(key => {
-                if (count !== 1) {
-                    console.log(key.textContent+" To Be Removed");
-                    key.remove()
-                } else {
-                    count++;
-                }
-            }
-        );
-    }
-    if(table.rows.length === 1){
         for (const assignmentKey of assignmentsMap.keys()) {
+            console.log("inde i loop");
             const assignment1 = assignmentsMap.get(assignmentKey);
             addRow(assignment1);
         }
-    }
-
 }
 
 createTableFromMap();
