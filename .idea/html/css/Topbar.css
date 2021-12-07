@@ -11,11 +11,11 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     padding:0 0 200px 0;
-    background: linear-gradient(to left, #030505,#817f81 , #bebdbd, #817f81, #030505);
+    background: linear-gradient(to left, #748697, #b3b1b3, #748697);
 
 }
 .header{
-    background: rgb(80,80,80);
+    background: rgb(198, 198, 198);
     height: 100px;
     margin: 0 0 0 0;
     display: flex;
