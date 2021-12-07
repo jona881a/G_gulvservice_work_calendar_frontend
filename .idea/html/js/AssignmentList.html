@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment List</title>
+    <link rel="stylesheet" type="text/css" href="../css/Topbar.css">
+    <link rel="stylesheet" href="../Topbar2.css">
+</head>
+<body>
+<div class="header2">
+    <img class="logo" src="../img/FinallogoBig.png" alt="Logo"/>
+    <div class="container">
+        <nav class="nav">
+            <ul>
+                <li><a id = "current" href="WorkCalendar.html">Calender</a></li>
+                <li><a href="createAssigment.html">Assignment</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<div class="table-wrap">
+    <table class="table" id="assignmentTable">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Address</th>
+            <th>Start</th>
+            <th>End</th>
+            <th>Color</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+    </table>
+</div>
+
+<div class="createTable-Wrap">
+    <button class="createTable">Show table</button>
+</div>
+
+<script src="fetchAssignment.js"></script>
+<script src="AssignmentTable.js"></script>
+</body>
+</html>
