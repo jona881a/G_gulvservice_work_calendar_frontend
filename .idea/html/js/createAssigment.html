@@ -20,46 +20,54 @@
     </div>
 </div>
 
-<div class="form-container" id = "formAssignment">
-    <form id="assign" action="http://localhost:8080/assignment" method="post">
+<div id="newEventModal">
 
-        <div class="movieID">
-        </div>
-        <div>
-            <label>* Address
-                <input type="text" name="address" required>
-            </label>
-        </div>
+    <h2 id="eventTitleHeader">New Event</h2>
 
-        <div>
-            <label>* Start time and Date
-                <input type="datetime-local" name="assignmentStartDateTime"required>
-            </label>
-        </div>
+    <div class="form-container" id="formAssignment">
 
-        <div>
-            <label>* End time and Date
-                <input type="datetime-local" name="assignmentEndDateTime" required>
-            </label>
-        </div>
+        <form id="assign" action="http://localhost:8080/assignment" method="post">
 
-        <div>
-            <label>* Color
-                <input type="text" name="color" required>
-            </label>
-        </div>
+            <input name="title" id="eventTitleInput" placeholder="Event Title" />
 
-        <div>
-            <label>* Description
-                <input type = "text" name="description" required>
-            </label>
-        </div>
+            <div>
+                <label>* Address
+                    <input id="addressInput"  type="text" name="address" >
+                </label>
+            </div>
 
-        <div id = "footer">
-            <button  type="submit" title="save assignment" id="submit">Create</button>
-        </div>
+            <div>
+                <label>* Start time and Date
+                    <input id="startTimeInput" type="datetime-local" name="assignmentStartDateTime" >
+                </label>
+            </div>
 
-    </form>
+            <div>
+                <label>* End time and Date
+                    <input id="endTimeInput" type="datetime-local" name="assignmentEndDateTime" >
+                </label>
+            </div>
+
+            <div>
+                <label id="options">* Event color
+                    <select id="colorInput"  required>
+                        <option>-choose-</option>
+                    </select>
+                </label>
+            </div>
+
+            <div>
+                <label>* Description
+                    <input id="descriptionInput" type = "text" name="description" >
+                </label>
+            </div>
+
+            <div id = "footer">
+                <button id="saveBtn" type="submit" title="save assignment">Save</button>
+                <button id="cancelBtn" type="reset" title="cancel assignment">Cancel</button>
+            </div>
+        </form>
+    </div>
 </div>
 
 
