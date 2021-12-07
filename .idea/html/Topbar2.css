@@ -45,8 +45,8 @@ th{
 .nav ul li a {
     text-decoration: none;
     color: white;
-
-    font-size: 26px;
+    font-family: "Times New Roman";
+    font-size: 25px;
     display: block;
     width:175px;
     text-align: center;
