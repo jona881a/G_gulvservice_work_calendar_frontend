@@ -52,11 +52,11 @@ th{
 }
 .nav ul li a:hover{
     transform:translateY(3%);
-    border-bottom:2px solid red;
+    border-bottom:2px solid lightslategrey;
 }
 
 #current{
-    border-bottom:2px solid red;
+    border-bottom:2px solid lightslategrey;
     transform:translateY(3%);
 }
 
