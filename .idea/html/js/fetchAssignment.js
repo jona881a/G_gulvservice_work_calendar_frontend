@@ -25,3 +25,49 @@ function showAssignmentMap() {
 function getAssigment(assignmentid) {
     return assignmentsMap.get(assignmentid);
 }
+
+
+const table = document.getElementById("assignmentTable");
+
+function addRow(assignment){
+
+
+    let rowCount = table.rows.length;
+    let row = table.insertRow(rowCount);
+    row.id = assignment.assignment;
+
+    let cell1 = row.insertCell(0);
+    cell1.innerHTML = assignment.assignmentID;
+
+    let cell2 = row.insertCell(1);
+    cell2.innerHTML = assignment.title;
+
+    let cell3 = row.insertCell(2);
+    cell3.innerHTML = assignment.address;
+
+    let cell4 = row.insertCell(3);
+    cell4.innerHTML = assignment.assignmentStartDateTime;
+
+    let cell5 = row.insertCell(4);
+    cell5.innerHTML = assignment.assignmentEndDateTime;
+
+    let cell6 = row.insertCell(5);
+    cell6.innerHTML = assignment.color;
+
+    let cell7 = row.insertCell(6);
+    cell7.innerHTML = assignment.description;
+
+}
+
+   function createTableFromMap() {
+      let loopCount = 1;
+    for (const assignmentKey of assignmentsMap.keys()) {
+        const assignment1 = assignmentsMap.get(assignmentKey);
+        addRow(assignment1);
+    }
+}
+
+const pbCreateTable = document.querySelector(".pbCreateTable");
+pbCreateTable.addEventListener("click", createTableFromMap);
+
+fetchAssignmentFromDB();
