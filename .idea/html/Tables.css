@@ -13,3 +13,39 @@ th{
     padding: 10px;
     font-size: 30px;
 }
+td{
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 20px;
+}
+
+td, th{
+    font-family: "Times New Roman";
+}
+
+tr:nth-child(even){
+    color: #686969;
+}
+
+.createTable-Wrap{
+    margin:100px auto 0 auto;
+    text-align: center;
+}
+
+.pbCreateTable{
+    border:none;
+    padding: 7px 10px;
+    text-align: center;
+    background-color: rgba(0,0,0,0);
+    color:white;
+    width:250px;
+    height: 75px;
+    font-size:26px;
+}
+.pbCreateTable:hover{
+    cursor: pointer;
+    border-bottom:2px solid lightslategrey;
+    transform:translateY(2%);
+}
