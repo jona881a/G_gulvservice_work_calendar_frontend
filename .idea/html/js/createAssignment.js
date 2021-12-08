@@ -50,4 +50,14 @@ async function insertAssignmentInBackend(url,formData){
     return response.json();
 
 }
+function createDropDown() {
+    var select = document.getElementById("colorInput");
 
+    for(var i = 0; i < modalColors.length; i++) {
+        var option = modalColors[i];
+        var element = document.createElement("option");
+        element.textContent = option;
+        select.appendChild(element);
+    }
+}
+createDropDown()
