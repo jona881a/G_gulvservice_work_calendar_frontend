@@ -1,0 +1,15 @@
+#table-wrap{
+    margin: auto;
+    width: 50%;
+}
+
+#assignmentTable{
+    margin: auto;
+    width: 300px;
+    color: white;
+}
+
+th{
+    padding: 10px;
+    font-size: 30px;
+}

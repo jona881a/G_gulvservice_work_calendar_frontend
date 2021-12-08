@@ -70,4 +70,4 @@ function addRow(assignment){
 const pbCreateTable = document.querySelector(".pbCreateTable");
 pbCreateTable.addEventListener("click", createTableFromMap);
 
-fetchAssignmentFromDB();
+ fetchAssignmentFromDB();
