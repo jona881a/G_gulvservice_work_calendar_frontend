@@ -1,0 +1,27 @@
+
+
+
+
+.
+
+
+#footer{
+    float:right;
+}
+#footer input, #footer button{
+    width:150px;
+    height:35px;
+    font-size: 15px;
+    border-radius: 5px;
+}
+#footer input:hover, #footer button:hover{
+    cursor:pointer;
+    background-color: rgb(193, 193, 193);
+}
+
+#footer-btn{
+    cursor:pointer;
+    background: grey;
+}
+
+
