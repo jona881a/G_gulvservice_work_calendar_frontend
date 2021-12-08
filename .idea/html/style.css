@@ -1,11 +1,6 @@
+
 body {
     justify-content: center;
-    margin: 0;
-    font-family: 'work sans', sans-serif;
-    font-weight: 400;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding:0 0 200px 0;
     background: linear-gradient(to left, #748697, #b3b1b3, #748697);
 
 }
@@ -20,7 +15,7 @@ button {
     color: white;
 }
 
-#headerMonthYear {
+#header {
     padding: 10px;
     color: black;
     font-size: 70px;
@@ -28,8 +23,7 @@ button {
     display: flex;
     justify-content: space-between;
 }
-
-#headerMonthYear button {
+#header button {
     background-color:#92a1d1;
 }
 #container {
@@ -112,24 +106,25 @@ button {
 .form-container{
     color: #ffffff;
 
-    width:70%;
-    margin: 0 auto;
-    padding:75px 50px;
+    padding:3px;
+    padding-top: 30px;
+    padding-left: 55px;
+    padding-right: 40px;
     background: rgba(10, 10, 10, 0.96);
-    height:auto;
+
     box-shadow: 0 1px rgba(255, 255, 255, 0.1);
     border-radius: 4px;
+
 }
 
 .form-container div{
     margin-bottom:15px;
 }
 .form-container div input, .form-container div select{
-    outline:none;
-}
-.form-container label{
-    font-size: 20px;
-    color: white;
+    float: right;
+    margin-right: 2px;
+    width:200px;
+    padding:2px 2px;
 }
 #eventTitleInput {
     padding: 10px;
@@ -168,22 +163,4 @@ button {
 }
 #assign{
 
-}
-#footer{
-    float:right;
-}
-#footer input, #footer button{
-    width:150px;
-    height:35px;
-    font-size: 15px;
-    border-radius: 5px;
-}
-#footer input:hover, #footer button:hover{
-    cursor:pointer;
-    background-color: rgb(193, 193, 193);
-}
-
-#footer-btn{
-    cursor:pointer;
-    background: grey;
 }
