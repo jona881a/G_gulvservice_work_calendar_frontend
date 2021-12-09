@@ -2,7 +2,7 @@ let nav = 0;  //Bliver brugt som varibael til at navigerer frem og tilbage i må
 let clicked = null; //Indikerer om statusen på en måned er trykket på eller ikke trykket på
 let events = localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : []; //Et array med strings, kan ikke indeholde arrays, derfor bruges JSON til at parse
 //
-const oneDayInMillis = 1000 * 60 * 60 * 24;
+const oneDayInMillis = 1000 * 60 * 60 * 24; //Bliver brugt til at regne med hele dage når vi skal have længden af en assignment
 
 const calendar = document.getElementById('calendar');
 const newEventModal = document.getElementById('newEventModal');
@@ -88,6 +88,7 @@ function openModalForEvent(date){
 }
 
 function openModalForDay(date) {
+    console.log("in openModalForDay");
     newEventModal.style.display = 'block';
     createDropDown();
     backDrop.style.display = 'block';
@@ -100,8 +101,6 @@ function createDropDown() {
         var option = modalColors[i];
         var element = document.createElement("option");
         element.textContent = option;
-        element.setAttribute("name",option);
-        element.setAttribute("value", option);
         select.appendChild(element);
     }
     console.log(select);
@@ -227,7 +226,7 @@ function deleteEvent(){
         };
     });
 
-    events = events.filter(e => e.date !== clicked);
+    events = events.filter(e => e.date !== clicked && eventTitle === e.title);
 
     localStorage.setItem('events', JSON.stringify(events));
 

@@ -1,7 +1,6 @@
 
 document.addEventListener("DOMContentLoaded",createFormEvent);
 
-
 function createFormEvent(){
     const formObject = document.getElementById("assign");
     formObject.addEventListener("submit",handleAssignmentSubmit);
@@ -16,7 +15,6 @@ async function handleAssignmentSubmit(event){
     try{
         const formData = new FormData(form);
         await insertAssignmentInBackend(url,formData);
-        console.log("insertAssignmentInBackend running");
 
     }catch(error){
         console.log("Error in function handleAssignmentSubmit "+error.message)
@@ -50,6 +48,7 @@ async function insertAssignmentInBackend(url,formData){
     return response.json();
 
 }
+/*
 function createDropDown() {
     var select = document.getElementById("colorInput");
 
@@ -61,3 +60,5 @@ function createDropDown() {
     }
 }
 createDropDown()
+
+ */
