@@ -1,18 +1,14 @@
-
-async function deleteAssignmentFromDB(screening) {
+async function deleteAssignmentFromDB(assignment) {
     try {
-        const response = await restDeleteScreening(screening);
-        out("Vi har slettet");
-        out(response);
+        const response = await restDeleteScreening(assignment);
 
     } catch(error) {
         alert(error.message);
-        out(error);
     }
 }
 
-async function restDeleteScreening(screening) {
-    const url = "http://localhost:8080/assignment/" + assignment.assignmentID;
+async function restDeleteScreening(assignment) {
+    const url = "http://localhost:8080/assignment/" + assignment.assignmentId;
 
     const fetchOptions = {
         method: "DELETE",
@@ -25,7 +21,7 @@ async function restDeleteScreening(screening) {
     const response = await fetch(url, fetchOptions);
 
     if (!response.ok) {
-        out("det gik ikke godt");
+        console.log("det gik ikke godt");
     }
 
     return response;
