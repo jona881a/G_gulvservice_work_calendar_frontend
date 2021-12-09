@@ -6,6 +6,7 @@ const oneDayInMillis = 1000 * 60 * 60 * 24; //Bliver brugt til at regne med hele
 
 const calendar = document.getElementById('calendar');
 const newEventModal = document.getElementById('newEventModal');
+const editEventModal = document.getElementById('editEventModal');
 const deleteEventModal = document.getElementById('deleteEventModal');
 const backDrop = document.getElementById('modalBackDrop');
 
@@ -80,19 +81,32 @@ function openModalForEvent(date){
         document.getElementById('colorText').innerText = eventForDay.color + " - team";
         document.getElementById('descriptionText').innerText = eventForDay.description
         deleteEventModal.style.display = 'block';
-    } //else {
-       // newEventModal.style.display = 'block';
-        //createDropDown();
-    //}
+    }
 
     backDrop.style.display = 'block';
 }
 
 function openModalForDay(date) {
-    console.log("in openModalForDay");
     newEventModal.style.display = 'block';
     createDropDown();
     backDrop.style.display = 'block';
+}
+
+function openModalEditEvent() {
+    deleteEventModal.style.display = 'none';
+    const eventDetail = Array.from(document.getElementsByClassName("pText"));
+    console.log(editEventModal);
+    /*
+    document.getElementById('eventText').innerText = event[0].innerHTML;
+    document.getElementById('addressText').innerText = event[1].innerHTML;
+    document.getElementById('startDateText').innerText = event[2].innerHTML;
+    document.getElementById('endDateText').innerText = event[3].innerHTML;
+    document.getElementById('colorText').innerText = event[4].innerHTML;
+    document.getElementById('descriptionText').innerText = event[5].innerHTML;
+
+     */
+    //editEventModal.style.display = 'block';
+    //backDrop.style.display = 'block';
 }
 
 function createDropDown() {
@@ -158,6 +172,7 @@ function load(){
 }
 
 function loadAssignmentsIntoCalendar() {
+
     const days = Array.from(document.getElementsByClassName('day'));
     const months = ["January","February","March","April","May","June","July","August","September","October","November","December"]
     const monthName = document.getElementById("currentMonthDisplay").innerText.split(" ")[0];
@@ -189,21 +204,21 @@ function loadAssignmentsIntoCalendar() {
     })
 }
 
-function closeModal(){
+async function closeModal(){
     eventTitleInput.classList.remove('error');
     newEventModal.style.display = 'none';
     deleteEventModal.style.display = 'none';
     backDrop.style.display = 'none';
     clicked = null;
-    load();
+    await loadAssignmentsFromDatabase();
 }
 
-function saveEvent(){
-    if(eventTitleInput.value){
+function saveEvent() {
+    if (eventTitleInput.value) {
         eventTitleInput.classList.remove('error');
 
         events.push({
-            date: clicked,
+            date: startTimeInput.value,
             title: eventTitleInput.value,
             address: addressInput.value,
             color: colorInput.value,
@@ -214,38 +229,10 @@ function saveEvent(){
 
         localStorage.setItem('events', JSON.stringify(events));
         closeModal();
-    }else{
+    } else {
         eventTitleInput.classList.add('error');
     }
 }
-//Update nedefter
-async function updateEvent(assignment){
-    try {
-        const response = await restUpdateEvent(assignment);
-    } catch(error) {
-        alert(error.message);
-    }
-}
-
-async function restUpdateEvent(assignment){
-    const url = "http://localhost:8080/assignment/{id}"+ assignment.screeningID;
-    const jsonString = JSON.stringify(assignment);
-
-    const fetchOptions = {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: jsonString
-    }
-    const response = await fetch(url, fetchOptions);
-
-    if (!response.ok) {
-        console.log("nope");
-    }
-    return response.json();
-}
-//Update opefter
 
 function deleteEvent(){
     const eventTitle = document.getElementById("eventText").innerText;
@@ -292,7 +279,7 @@ function clickButtons(){
 
     document.getElementById('deleteBtn').addEventListener('click', deleteEvent);
 
-    document.getElementById('updateBtn').addEventListener('click', updateEvent);
+    document.getElementById('updateBtn').addEventListener('click', openModalEditEvent);
 
     document.getElementById('closeBtn').addEventListener('click',closeModal);
 }

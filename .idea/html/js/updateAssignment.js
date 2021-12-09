@@ -1,3 +1,5 @@
+//document.addEventListener("DOMContentLoaded",updateAssignment);
+
 async function updateAssignment(assignment){
     try {
         const response = await restUpdateAssignment(assignment);
@@ -9,7 +11,6 @@ async function updateAssignment(assignment){
 async function restUpdateAssignment(assignment){
     const url = "http://localhost:8080/assignment/{id}"+ assignment.screeningID;
     const jsonString = JSON.stringify(assignment);
-    out(jsonString);
 
     const fetchOptions = {
         method: "PUT",
