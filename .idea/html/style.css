@@ -106,13 +106,11 @@ button {
 
 .form-container{
     color: #ffffff;
-
     padding:3px;
     padding-top: 30px;
     padding-left: 55px;
     padding-right: 40px;
     background: rgba(10, 10, 10, 0.96);
-
     box-shadow: 0 1px rgba(255, 255, 255, 0.1);
     border-radius: 4px;
 
@@ -150,7 +148,6 @@ button {
 #saveBtn, #closeBtn {
     background-color: #92a1d1;
 }
-
 
 #modalBackDrop {
     display: none;
