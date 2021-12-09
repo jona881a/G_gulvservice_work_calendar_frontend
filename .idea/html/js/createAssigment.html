@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Create Assignment</title>
     <link rel="stylesheet" type="text/css" href="../TopbarFinal.css">
+    <link rel="stylesheet" type="text/css" href="../formStyle.css">
 
 </head>
 <body>
@@ -22,15 +23,22 @@
     </div>
 </div>
 
-<div id="newEventModal">
 
-    <h2 id="eventTitleHeader">New Event</h2>
+
+
 
     <div class="form-container" id="formAssignment">
+        <h3 id="eventTitle">New Event</h3>
 
         <form id="assign" action="http://localhost:8080/assignment" method="post">
 
-            <input name="title" id="eventTitleInput" placeholder="Event Title" />
+            <div>
+                <label>* Title
+                    <input name="title" id="eventTitleInput" placeholder="Event Title" />
+                </label>
+
+            </div>
+
 
             <div>
                 <label>* Address
@@ -70,7 +78,7 @@
             </div>
         </form>
     </div>
-</div>
+
 
 
 <script src ="WorkCalendar.js"></script>
