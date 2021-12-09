@@ -104,27 +104,6 @@ button {
     font-size: 20px;
 }
 
-.form-container{
-    color: #ffffff;
-    padding:3px;
-    padding-top: 30px;
-    padding-left: 55px;
-    padding-right: 40px;
-    background: rgba(10, 10, 10, 0.96);
-    box-shadow: 0 1px rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-
-}
-
-.form-container div{
-    margin-bottom:15px;
-}
-.form-container div input, .form-container div select{
-    float: right;
-    margin-right: 2px;
-    width:200px;
-    padding:2px 2px;
-}
 #eventTitleInput {
     padding: 10px;
     width: 100%;
@@ -158,7 +137,4 @@ button {
     height: 120vh;
     position: absolute;
     background-color: rgba(83, 83, 83, 0.8);
-}
-#assign{
-
 }
