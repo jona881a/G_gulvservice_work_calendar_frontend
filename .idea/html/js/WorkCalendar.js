@@ -26,6 +26,7 @@ async function loadAssignmentsFromDatabase() {
     await fetch(urlAssignment).then(response => response.json())
     .then(assigments =>{
         assigments.forEach(assignment => {
+            const dateOfAssignment = new Date(assignment.assignmentStartDateTime);
 
             const startDate = new Date(assignment.assignmentStartDateTime);
             const endDate = new Date(assignment.assignmentEndDateTime);
@@ -103,7 +104,6 @@ function createDropDown() {
         element.textContent = option;
         select.appendChild(element);
     }
-    console.log(select);
 }
 
 function load(){
@@ -133,6 +133,7 @@ function load(){
 
     calendar.innerHTML = '';
 
+
     for(let i = 1; i <= paddingDays + amountOfDaysInMonth; i++){
         const daySquare = document.createElement('div');
         daySquare.classList.add('day');
@@ -141,6 +142,7 @@ function load(){
 
         if(i > paddingDays){
             daySquare.innerText = i - paddingDays;
+            const eventForDay = events.find(e => e.date === dayString);
 
             if (i - paddingDays === day && nav === 0) {
                 daySquare.id = 'currentDay';
@@ -216,6 +218,34 @@ function saveEvent(){
         eventTitleInput.classList.add('error');
     }
 }
+//Update nedefter
+async function updateEvent(assignment){
+    try {
+        const response = await restUpdateEvent(assignment);
+    } catch(error) {
+        alert(error.message);
+    }
+}
+
+async function restUpdateEvent(assignment){
+    const url = "http://localhost:8080/assignment/{id}"+ assignment.screeningID;
+    const jsonString = JSON.stringify(assignment);
+
+    const fetchOptions = {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: jsonString
+    }
+    const response = await fetch(url, fetchOptions);
+
+    if (!response.ok) {
+        console.log("nope");
+    }
+    return response.json();
+}
+//Update opefter
 
 function deleteEvent(){
     const eventTitle = document.getElementById("eventText").innerText;
@@ -230,8 +260,20 @@ function deleteEvent(){
 
     localStorage.setItem('events', JSON.stringify(events));
 
+    //deleteAssignmentFromDB(screening);
+
     closeModal();
 }
+
+function resetInputFields(){
+    eventTitleInput.value = '';
+    addressInput.value = '';
+    colorInput.value = '';
+    descriptionInput.value = '';
+    startTimeInput.value = null;
+    endTimeInput.value = null;
+}
+
 
 function clickButtons(){
 
@@ -245,8 +287,13 @@ function clickButtons(){
     })
 
     document.getElementById('saveBtn').addEventListener('click', saveEvent);
+
     document.getElementById('cancelBtn').addEventListener('click',closeModal);
+
     document.getElementById('deleteBtn').addEventListener('click', deleteEvent);
+
+    document.getElementById('updateBtn').addEventListener('click', updateEvent);
+
     document.getElementById('closeBtn').addEventListener('click',closeModal);
 }
 
@@ -265,3 +312,4 @@ async function loadCalendar() {
 }
 
 loadCalendar();
+

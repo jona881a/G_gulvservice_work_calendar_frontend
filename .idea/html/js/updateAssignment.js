@@ -1,49 +1,27 @@
-document.addEventListener("DOMContentLoaded",createFormEvent);
-
-
-function createFormEvent(){
-    const formObject = document.getElementById("assign");
-    formObject.addEventListener("submit",handleAssignmentSubmit);
-}
-
-async function handleAssignmentSubmit(event){
-    event.preventDefault();
-
-    const form = event.currentTarget;
-    const url = form.action;
-
-    try{
-        const formData = new FormData(form);
-        await insertAssignmentInBackend(url,formData);
-        console.log("updateAssignmentInBackend running");
-
-    }catch(error){
-        console.log("Error in function handleAssignmentSubmit "+error.message)
+async function updateAssignment(assignment){
+    try {
+        const response = await restUpdateAssignment(assignment);
+    } catch(error) {
+        alert(error.message);
     }
-    //window.location.href = "/G_gulvservice_work_calendar_frontend/html/assignment.html";
 }
 
-async function updateAssignmentBackend() {
-    const plainFormData = Object.fromEntries(formData.entries());
+async function restUpdateAssignment(assignment){
+    const url = "http://localhost:8080/assignment/{id}"+ assignment.screeningID;
+    const jsonString = JSON.stringify(assignment);
+    out(jsonString);
 
-    console.log(plainFormData);
-
-    const JSONObjectToJSONString = JSON.stringify(plainFormData);
-
-    console.log(JSONObjectToJSONString);
-    console.log("url: "+url);
-
-    const PUTOptions = {
+    const fetchOptions = {
         method: "PUT",
         headers: {
-            "Content-type": "application/json"
+            "Content-Type": "application/json"
         },
-        body: JSONObjectToJSONString
+        body: jsonString
     }
+    const response = await fetch(url, fetchOptions);
 
-    const response = await fetch(url,PUTOptions);
-
-    await resetInputFields();
-
+    if (!response.ok) {
+        console.log("nope");
+    }
     return response.json();
 }
