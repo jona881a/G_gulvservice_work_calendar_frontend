@@ -1,5 +1,5 @@
 
-.form-container{
+#formAssignmentCreate{
     color: #ffffff;
     padding:3px;
     padding: 50px;
@@ -11,22 +11,41 @@
     margin: auto;
 
 }
-
-.form-container div{
+#formAssignmentCreate div{
     margin-bottom:15px;
     padding: 20px;
 
 }
-.form-container div input, .form-container div select{
+#formAssignmentCreate div input, #formAssignmentCreate div select{
     float: right;
     margin-right: 2px;
     width:500px;
     height: 50px;
-
 }
-.form-container div label{
+
+#formAssignmentCreate div label{
     font-size: 30px;
 }
+
+
+#newEventModal div{
+    margin-bottom:15px;
+    padding: 20px;
+
+}
+#newEventModal div input, #newEventModal div select{
+    float: right;
+    margin-right: 2px;
+    width:50%;
+    height: 50px;
+
+}
+
+#newEventModal div label{
+    font-size: 30px;
+}
+
+
 #footer{
     float:right;
 }

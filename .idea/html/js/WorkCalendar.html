@@ -48,14 +48,14 @@
 
 <div id="newEventModal">
 
-    <h2 id="eventTitleHeader">New Event</h2>
-
-    <div class="form-container" id="formAssignment">
-
+        <h2 id="eventTitleHeader">New Event</h2>
         <form id="assign" action="http://localhost:8080/assignment" method="post">
 
-            <input name="title" id="eventTitleInput" placeholder="Event Title" />
-
+            <div>
+                <label>* Title
+                    <input name="title" id="eventTitleInput" placeholder="Event Title" />
+                </label>
+            </div>
             <div>
                 <label>* Address
                     <input id="addressInput"  type="text" name="address" >
@@ -94,7 +94,7 @@
             </div>
         </form>
     </div>
-</div>
+
 
 <div id="deleteEventModal">
     <h2 id="eventTitleHeader">Event</h2>

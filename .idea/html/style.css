@@ -81,22 +81,34 @@ button {
     background-color: #FFFCFF !important;
     box-shadow: none !important;
 }
-#newEventModal, #deleteEventModal {
+
+#newEventModal{
     display: none;
     z-index: 20;
     padding: 20px;
-    background-color: #070e11;
+    height: 650px;
+    width: 1500px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    font-family: sans-serif;
+    color: #ffffff;
+    box-shadow: 0 1px rgba(255, 255, 255, 0.1);
+}
 
+#deleteEventModal {
+    display: none;
+    z-index: 20;
+    padding: 20px;
+    background: navy;
     width: 50%;
     height: 50%;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
-    border: 5px solid lightslategrey;
     font-family: sans-serif;
-
-
 }
 
 .pText{
@@ -116,6 +128,7 @@ button {
 }
 #eventTitleHeader{
     color: white;
+    font-size: 50px;
 }
 
 #eventTitleInput.error {
