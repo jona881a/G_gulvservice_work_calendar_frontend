@@ -24,5 +24,8 @@ async function restUpdateAssignment(assignment){
     if (!response.ok) {
         console.log("nope");
     }
+
+    await resetInputFields();
+
     return response.json();
 }

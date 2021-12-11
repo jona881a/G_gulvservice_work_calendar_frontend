@@ -73,3 +73,7 @@
 #saveBtn, #closeBtn {
     background-color: #92a1d1;
 }
+
+#editEventModal {
+    display:none;
+}

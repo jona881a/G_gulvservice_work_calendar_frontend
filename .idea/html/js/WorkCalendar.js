@@ -93,19 +93,23 @@ function openModalForDay(date) {
 }
 
 function openModalEditEvent() {
-    deleteEventModal.style.display = 'none';
+    //deleteEventModal.style.display = 'none';
     const eventDetail = Array.from(document.getElementsByClassName("pText"));
-    console.log(editEventModal);
-    /*
-    document.getElementById('eventText').innerText = event[0].innerHTML;
-    document.getElementById('addressText').innerText = event[1].innerHTML;
-    document.getElementById('startDateText').innerText = event[2].innerHTML;
-    document.getElementById('endDateText').innerText = event[3].innerHTML;
-    document.getElementById('colorText').innerText = event[4].innerHTML;
-    document.getElementById('descriptionText').innerText = event[5].innerHTML;
+    const startDate = eventDetail[2].innerHTML.split("T")[0];
+    const endDate = eventDetail[3].innerHTML.split("T")[0];
+    createDropDown();
+    console.log(startDate);
 
-     */
-    //editEventModal.style.display = 'block';
+    document.getElementById("editTitle").value = eventDetail[0].innerHTML;
+    document.getElementById("editAddress").value = eventDetail[1].innerHTML;
+    document.getElementById("editStartDate").value = startDate;
+    document.getElementById("editEndDate").value = endDate;
+    document.getElementById("editColor").value = eventDetail[4].innerHTML.split(" ")[0];
+    document.getElementById("editDescription").value = eventDetail[5].innerHTML;
+
+    console.log(eventTitleInput);
+
+    editEventModal.style.display = 'block';
     //backDrop.style.display = 'block';
 }
 

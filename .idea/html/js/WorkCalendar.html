@@ -47,8 +47,7 @@
 
 
 <div id="newEventModal">
-
-        <h2 id="eventTitleHeader">New Event</h2>
+        <h2 id="eventTitleHeader">Edit Event</h2>
         <form id="assign" action="http://localhost:8080/assignment" method="post">
 
             <div>
@@ -94,36 +93,36 @@
             </div>
         </form>
     </div>
-<!--
+
 <div id="editEventModal">
 
-    <h2 id="eventTitleHeader">New Event</h2>
+    <h2 id="eventTitleHeader">Edit Event</h2>
 
     <div class="form-container" id="formAssignment">
 
-        <input name="title" id="eventTitleInput" placeholder="Event Title"/>
+        <input name="title" id="editTitle" placeholder="Event Title"/>
 
         <div>
             <label>* Address
-                <input id="addressInput" type="text" name="address">
+                <input id="editAddress" type="text" name="address">
             </label>
         </div>
 
         <div>
             <label>* Start time and Date
-                <input id="startTimeInput" type="date" name="assignmentStartDateTime">
+                <input id="editStartDate" type="date" name="assignmentStartDateTime">
             </label>
         </div>
 
         <div>
             <label>* End time and Date
-                <input id="endTimeInput" type="date" name="assignmentEndDateTime">
+                <input id="editEndDate" type="date" name="assignmentEndDateTime">
             </label>
         </div>
 
         <div>
             <label id="options">* Event color
-                <select id="colorInput" name="color" required>
+                <select id="editColor" name="color" required>
                     <option>-choose-</option>
                 </select>
             </label>
@@ -131,7 +130,7 @@
 
         <div>
             <label>* Description
-                <input id="descriptionInput" type="text" name="description">
+                <input id="editDescription" type="text" name="description">
             </label>
         </div>
 
@@ -141,7 +140,6 @@
         </div>
     </div>
 </div>
--->
 
 <div id="deleteEventModal">
     <h2 id="eventTitleHeader">Event</h2>
