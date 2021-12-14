@@ -65,64 +65,6 @@ async function loadAssignmentsFromDatabase() {
     await load();
 }
 
-function openModalForEvent(date){
-    event.stopPropagation(); //Sørger for at parentNoden (div for day) ikke bliver kaldt, dette kaldes eventbubbling
-
-    const eventTitle = event.currentTarget.valueOf().innerHTML;
-    clicked = date;
-
-    const eventForDay = events.find(e => e.date === clicked && eventTitle === e.title);
-
-    if (eventForDay){
-        document.getElementById('eventText').innerText = eventForDay.title;
-        document.getElementById('addressText').innerText = eventForDay.address;
-        document.getElementById('startDateText').innerText = eventForDay.startTime;
-        document.getElementById('endDateText').innerText = eventForDay.endTime;
-        document.getElementById('colorText').innerText = eventForDay.color + " - team";
-        document.getElementById('descriptionText').innerText = eventForDay.description
-        deleteEventModal.style.display = 'block';
-    }
-
-    backDrop.style.display = 'block';
-}
-
-function openModalForDay(date) {
-    newEventModal.style.display = 'block';
-    createDropDown();
-    backDrop.style.display = 'block';
-}
-
-function openModalEditEvent() {
-    //deleteEventModal.style.display = 'none';
-    const eventDetail = Array.from(document.getElementsByClassName("pText"));
-    const startDate = eventDetail[2].innerHTML.split("T")[0];
-    const endDate = eventDetail[3].innerHTML.split("T")[0];
-    createDropDown();
-    console.log(startDate);
-
-    document.getElementById("editTitle").value = eventDetail[0].innerHTML;
-    document.getElementById("editAddress").value = eventDetail[1].innerHTML;
-    document.getElementById("editStartDate").value = startDate;
-    document.getElementById("editEndDate").value = endDate;
-    document.getElementById("editColor").value = eventDetail[4].innerHTML.split(" ")[0];
-    document.getElementById("editDescription").value = eventDetail[5].innerHTML;
-
-    console.log(eventTitleInput);
-
-    editEventModal.style.display = 'block';
-    //backDrop.style.display = 'block';
-}
-
-function createDropDown() {
-    var select = document.getElementById("colorInput");
-
-    for(var i = 0; i < modalColors.length; i++) {
-        var option = modalColors[i];
-        var element = document.createElement("option");
-        element.textContent = option;
-        select.appendChild(element);
-    }
-}
 
 function load(){
     const dt = new Date();
@@ -208,6 +150,55 @@ function loadAssignmentsIntoCalendar() {
     })
 }
 
+function openModalForEvent(date){
+    event.stopPropagation(); //Sørger for at parentNoden (div for day) ikke bliver kaldt, dette kaldes eventbubbling
+
+    const eventTitle = event.currentTarget.valueOf().innerHTML;
+    clicked = date;
+
+    const eventForDay = events.find(e => e.date === clicked && eventTitle === e.title);
+
+    if (eventForDay){
+        document.getElementById('eventText').innerText = eventForDay.title;
+        document.getElementById('addressText').innerText = eventForDay.address;
+        document.getElementById('startDateText').innerText = eventForDay.startTime;
+        document.getElementById('endDateText').innerText = eventForDay.endTime;
+        document.getElementById('colorText').innerText = eventForDay.color + " - team";
+        document.getElementById('descriptionText').innerText = eventForDay.description
+        deleteEventModal.style.display = 'block';
+    }
+
+    backDrop.style.display = 'block';
+}
+
+function openModalForDay(date) {
+    newEventModal.style.display = 'block';
+    createDropDown();
+    backDrop.style.display = 'block';
+}
+
+function openModalEditEvent() { //Vi burde gøre så vi får et object med ind eller date så vi kan finde et object vi ændre og så kan sende videre til databasen
+    //deleteEventModal.style.display = 'none';
+    const eventDetail = Array.from(document.getElementsByClassName("pText"));
+    const startDate = eventDetail[2].innerHTML.split("T")[0];
+    const endDate = eventDetail[3].innerHTML.split("T")[0];
+    createDropDown();
+    console.log(startDate);
+
+    document.getElementById("editTitle").value = eventDetail[0].innerHTML;
+    document.getElementById("editAddress").value = eventDetail[1].innerHTML;
+    document.getElementById("editStartDate").value = startDate;
+    document.getElementById("editEndDate").value = endDate;
+    document.getElementById("editColor").value = eventDetail[4].innerHTML.split(" ")[0];
+    document.getElementById("editDescription").value = eventDetail[5].innerHTML;
+
+    console.log(eventTitleInput);
+
+    editEventModal.style.display = 'block';
+    //backDrop.style.display = 'block';
+}
+
+
 async function closeModal(){
     eventTitleInput.classList.remove('error');
     newEventModal.style.display = 'none';
@@ -215,6 +206,17 @@ async function closeModal(){
     backDrop.style.display = 'none';
     clicked = null;
     await loadAssignmentsFromDatabase();
+}
+
+function createDropDown() {
+    var select = document.getElementById("colorInput");
+
+    for(var i = 0; i < modalColors.length; i++) {
+        var option = modalColors[i];
+        var element = document.createElement("option");
+        element.textContent = option;
+        select.appendChild(element);
+    }
 }
 
 function saveEvent() {
